@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- META DATA -->
+  <meta name="ad.size" content="width=970,height=250">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ALWAYS HTTPS LINKS TO ANY JS OR GOOGLE FONT FILES -->
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.11.5_min.js"></script>
+
+  <!-- ADD TITLE -->
+  <title>970x250</title>
+  <script type="text/javascript">
+    var clickTag = "https://www.lloydsbank.com/";
+  </script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div id="bannerContainer">
+    <!-- Track -->
+    <div class="track track1 rect"></div>
+    <div class="track track2 rect"></div>
+    <!-- Signal Line -->
+    <div class="signal-line"></div>
+    <!-- Stations -->
+    <div class="stations">
+      <div class="main-station"></div>
+      <div class="sub-stations">
+        <ul class="sub-stations-list"> <li class="from-station">
+            <span class="start-time">17:43 <small>to</small></span>
+            <span class="station-name">Liverpool Lime Street</span>
+            <small>Calling at:</small>
+          </li>
+          <li class="station1 abs0">
+            <span class="station-name">Shoot off emails</span>
+            <span class="station-point"></span>
+          </li>
+          <li class="station2 abs0">
+            <span class="station-name">To-do list done</span>
+            <span class="station-point"></span>
+          </li>
+          <li class="station3 abs0">
+            <span class="station-name">Laptop off</span>
+            <span class="station-point"></span>
+          </li>
+          <li class="station4 abs0">
+            <span class="station-name">Audible sigh</span>
+            <span class="station-point"></span>
+          </li>
+          <li class="station5 abs0">
+            <span class="station-name">Quick tipple?</span>
+            <span class="station-point"></span>
+          </li>
+        </ul>
+      </div>
+      <!-- Train -->
+      <div class="train"></div>
+    </div>
+    <!-- Final copy -->
+    <div class="final-copy abs0">
+      <div class="copy1">
+        London to Liverpool <br /> in <span>2h 21m</span>
+      </div>
+      <div class="copy2">
+        Business travel by train <br /> is time well spent
+      </div>
+    </div>
+    <!-- CTA -->
+    <a class="cta-btn abs0">Book Now <div class="arrow-right"></div></a>
+    <!-- Logo -->
+    <div class="logo abs0">
+      <img src="logo.svg" alt="logo" />
+    </div>
+    <!-- Map -->
+    <div class="map abs0"></div>
+    <div id="border"></div>
+  </div>
+
+
+  <script>
+    // DOM INSTALL
+    var DOMReady = function (a, b, c) {
+      b = document, c = 'addEventListener';
+      b[c] ? b[c]('DOMContentLoaded', a) : window.attachEvent('onload', a)
+    }
+
+    // DOM READY
+    DOMReady(function () {
+      animation()
+    });
+
+    // BEGIN THE GREENSOCK ANIMATION
+    function animation() {
+      var t1 = new TimelineMax({ repeat: 0, repeatDelay: 0 });
+      t1.add(s1(), "+=1");
+      t1.add(s2(), "-=1.4");
+      t1.timeScale(1.4);
+    }
+
+    function s1() {
+      let t1 = new TimelineMax({ repeat: 0, repeatDelay: 0});
+      t1
+      .to(".train", 10, { x: 440, ease: "power0" }, "train")
+      .to(".track, .signal-line, .main-station, .sub-stations", 10, { x: -380, ease: "power0" }, "train")   
+      .fromTo(".station1", 2, { autoAlpha: 0, ease: "power4" },{ autoAlpha: 1, ease: "power0"}, 0.5)
+      .fromTo(".station2", 2, { autoAlpha: 0, ease: "power4" },{ autoAlpha: 1, ease: "power0"}, 2)
+      .fromTo(".station3", 2, { autoAlpha: 0, ease: "power4" },{ autoAlpha: 1, ease: "power0"}, 3.8)
+      .fromTo(".station4", 2, { autoAlpha: 0, ease: "power4" },{ autoAlpha: 1, ease: "power0"}, 5.8)
+      .fromTo(".station5", 2, { autoAlpha: 0, ease: "power4" },{ autoAlpha: 1, ease: "power0"}, 7.5)
+      .to(".track, .signal-line, .main-station, .sub-stations", 2, { x: -765, ease: "power0"}, 9.5)
+      .to(".track1", 2, { width: 1200, ease: "power0"}, 9.5)
+      .to(".train", 2, { x: 40, ease: "power0"}, 9.5)
+      return t1;
+    }
+
+
+    function s2() {
+        let t1 = new TimelineMax({ repeat: 0,repeatDelay: 0,});
+        t1
+        .fromTo(".final-copy", 1.5, { x: 500, autoAlpha: 0, ease: "power0"}, { x: 0, autoAlpha: 1, ease: "power0"}, "-=0.1")
+        .fromTo(".map", 1.5, { x: 150, autoAlpha: 0, ease: "power0"}, { x: 0, autoAlpha: 1, ease: "power0"}, "-=1")
+        .fromTo(".cta-btn", 0.75, { y: 30, autoAlpha: 0, ease: "power0"}, { y: 0, autoAlpha: 1, ease: "power0"}, "-=0.1")
+        .fromTo(".logo", 0.75, { y: 30, autoAlpha: 0, ease: "power0"}, { y: 0, autoAlpha: 1, ease: "power0"}, "-=0.1")
+        return t1;
+    }
+
+
+
+    // ClickTag script
+    var clickTag = "https://www.lloydsbank.com/";
+    let button = document.querySelector('.cta-btn');
+    document.querySelector('#bannerContainer').addEventListener('click', function () {
+      button.click();
+    })
+  </script>
+
+</body>
+
+</html>
