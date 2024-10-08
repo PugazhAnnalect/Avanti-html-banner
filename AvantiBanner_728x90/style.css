@@ -1,0 +1,355 @@
+/* RESET CSS */
+
+* {
+    transition: cubic-bezier(.17, .67, .83, .67);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'AvertaCY';
+    src: url('./fonts/AvertaCY-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvertaCY';
+    src: url('./fonts/AvertaCY-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheim-Black.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* BODY, CONTAINER CSS */
+
+body {
+    background: #ffffff;
+    overflow: hidden;
+    color: #004F59;
+    font-family: 'AvertaCY';
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+#bannerContainer {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 728px;
+    height: 90px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#border {
+    position: absolute;
+    width: 728px;
+    height: 90px;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* COMMON CSS */
+
+.abs0 {
+    opacity: 0
+}
+
+.abs1 {
+    opacity: 1
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.font-black {
+    font-family: "GTU-Black";
+}
+
+.font-bold {
+    font-family: "GTU-Bold";
+}
+
+/* MAIN CSS */
+
+
+.track {
+    background-color: #ffffff;
+}
+
+.track.rect {
+    width: 1052px;
+    height: 150px;
+    border: 20px solid #004F59;
+    border-radius: 50px;
+    position: absolute;
+    left: -50px;
+    /* left: -700px; */
+    top: -67px;
+}
+
+.track2.rect {
+    width: 300px;
+    left: -255px;
+    top: -90px;
+    height: 172px;
+    border-radius: 56px;
+}
+
+
+.stations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -7px;
+    left: 100px;
+}
+
+.main-station {
+    position: absolute;
+    border: 3px solid #ffffff;
+    bottom: 2.5px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 24px 3px #00282F;
+    background-color: #00282F;
+    overflow: hidden;
+    z-index: 11;
+}
+
+.sub-stations {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-stations-list {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    left: 0;
+}
+
+.sub-stations-list li {
+    display: inline-block;
+    color: #004F59;
+    transform: rotate(340deg);
+    position: relative;
+    transform-origin: center left;
+    align-self: center;
+    width: 100px;
+}
+
+.sub-stations-list li .station-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: currentColor;
+    top: 33px;
+    transform: rotate(20deg);
+    left: -9px;
+}
+
+.sub-stations-list li.station1 .station-point {
+    display: none;
+}
+
+.sub-stations-list li.station1 {
+    left: 15px;
+}
+
+
+.sub-stations-list li.from-station {
+    width: 175px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+    transform: none;
+    top: -12px;
+    align-self: normal;
+}
+
+.sub-stations-list li.from-station .start-time {
+    color: #FF4713;
+}
+
+.sub-stations-list li.from-station span {
+    font-size: 18px;
+}
+
+.sub-stations-list li.from-station span,
+.sub-stations-list li.from-station small {
+    display: inline-block;
+}
+
+.sub-stations-list li.from-station small {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.sub-stations-list li.from-station .start-time small {
+    font-weight: 600;
+}
+
+.sub-stations-list li:not(.from-station) {
+    top: -6px;
+    position: relative;
+}
+
+.sub-stations-list li:not(.from-station) span {
+    font-size: 12px;
+}
+
+.sub-stations-list li:not(.from-station) span.station-name {
+    position: relative;
+    bottom: -10px;
+    left: -4px;
+}
+
+
+
+.train {
+    width: 40px;
+    height: 20px;
+    background: rgb(0, 79, 89);
+    background: linear-gradient(90deg, rgba(0, 79, 89, 1) 10%, rgba(83, 136, 143, 1) 100%);
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    z-index: 10;
+    transform: translateX(0px);
+}
+
+.signal-line {
+    background-color: #FF4713;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    left: 54px;
+    top: 0;
+}
+
+/* Final copy */
+
+.final-copy {
+    line-height: 1.2;
+    position: absolute;
+    right: 0;
+    width: 430px;
+    padding: 9px 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    font-weight: 600;
+    height: 90px;
+    justify-content: space-between;
+}
+
+.final-copy span {
+    color: #FF4713;
+}
+
+
+.final-copy .copy1,
+.final-copy .copy2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.final-copy .copy1 {
+    width: 163px;
+    text-align: right;
+}
+
+.cta-btn {
+    position: absolute;
+    color: #ffffff;
+    font-size: 12px;
+    bottom: 28px;
+    right: 176px;
+    width: 104px;
+    height: 34px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF4713;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.arrow-right {
+    margin-left: 5px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    transform: rotate(135deg);
+}
+
+.logo {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.map {
+    width: 550px;
+    height: 240px;
+    border: 34px solid #E2F5E9;
+    border-radius: 60px;
+    position: absolute;
+    right: -350px;
+    top: -160px;
+}
+
+.terms {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    font-size: 8px;
+    color: #555555;
+}
